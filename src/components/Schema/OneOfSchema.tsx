@@ -62,7 +62,7 @@ export class OneOfSchema extends React.Component<SchemaProps> {
         <div>
           {oneOf[schema.activeOneOf].deprecated && <Badge type="warning">Deprecated</Badge>}
         </div>
-        {activeSchema.rawSchema.description && (
+        {activeSchema.type == 'object' && activeSchema.rawSchema.description && (
           <Markdown source={activeSchema.rawSchema.description} />
         )}
         <ConstraintsView constraints={activeSchema.constraints} />
